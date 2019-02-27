@@ -40,6 +40,7 @@ class Convertion
 
     public function InputConvertion($prix, $deviseBase, $deviseFinale)
     {
+        $app = App::getInstance();
 
         if (!empty($prix)) {
             if ($deviseBase == 'EURO') {
@@ -47,13 +48,13 @@ class Convertion
                 if ($deviseFinale == "GBP") {
 
 
-                    $result = $this->convertion($prix, 0.87295);
+                    $result = $this->convertion($prix, $app->EUROversGBP);
                     return $result;
 
                 }
                 if ($deviseFinale == "USD") {
 
-                    $result = $this->convertion($prix, 1.2234);
+                    $result = $this->convertion($prix, $app->EUROversUSD);
                     return $result;
 
                 }
@@ -63,13 +64,13 @@ class Convertion
 
                 if ($deviseFinale == "USD") {
 
-                    $result = $this->convertion($prix, 1.28078);
+                    $result = $this->convertion($prix, $app->GBPversUSD);
                     return $result;
 
                 }
                 if ($deviseFinale == "EURO") {
 
-                    $result = $this->convertion($prix, 1.13470);
+                    $result = $this->convertion($prix, $app->GBPversEURO);
                     return $result;
 
                 }
@@ -80,13 +81,13 @@ class Convertion
                 if ($deviseFinale == "GBP") {
 
 
-                    $result = $this->convertion($prix, 0.780704);
+                    $result = $this->convertion($prix, $app->USDversGBP);
                     return $result;
 
                 }
                 if ($deviseFinale == "EURO") {
 
-                    $result = $this->convertion($prix, 0.885957);
+                    $result = $this->convertion($prix, $app->USDversEURO);
                     return $result;
 
 

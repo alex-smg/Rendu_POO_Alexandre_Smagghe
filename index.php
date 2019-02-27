@@ -5,9 +5,9 @@
     use Devise\Addition;
     use Devise\Affiche;
     use Devise\Convertion;
+    use Devise\Config;
 
 
-    $fruits = array(1, 2, 3, 4, 5, 6);
 
     $article1 = [
         0 => 254,
